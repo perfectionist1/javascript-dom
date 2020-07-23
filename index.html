@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <main id="container-main"> 
+        <section>
+            <h1>Some text over here</h1>
+            <article>
+                <h1>article-1</h1>
+                <p class="author">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam iusto dolore ipsa nobis iste, deleniti in magni praesentium nemo explicabo, ipsam officiis quae numquam perferendis, commodi esse perspiciatis minima tempora molestias quibusdam vitae. Mollitia impedit molestiae at nam hic? Quod?</p>
+            </article>
+            <article>
+                <h1>article-2</h1>
+                <p class="author">author-2</p>
+                <p class="description">Illum officiis sequi est labore nihil, aut nam laboriosam, ipsum quo asperiores quod pariatur eveniet saepe, tempora rem consequuntur facilis cumque reprehenderit porro magni sint? Expedita animi nobis inventore? Numquam repellendus officia accusantium ea dolores, error molestias aliquid earum quae.</p>
+            </article>
+            <article>
+                <h1>article-3</h1>
+                <p class="author">author-3</p>
+                <p class="description">Consequatur quos vero officiis adipisci laborum ea neque quae quidem excepturi error aliquam, at rerum odio perferendis qui accusamus doloremque harum reiciendis placeat natus? Veritatis debitis ipsam ipsa mollitia voluptas harum id possimus pariatur amet a. Earum voluptas adipisci eligendi?</p>
+            </article>
+        </section>
+        <section>
+            <h1> Gift items</h1>
+            <ul id="gift-item">
+                <li>Gift-1</li>
+                <li>Gift-2</li>
+                <li>Gift-3</li>
+                <li>Gift-4</li>
+            </ul>
+        </section>
+       <button id="colorChange">Click me to change the color</button>
+    </main>
+    <script>
+        // var author = document.getElementsByClassName("author");
+        // for(var i = 0; i<author.length; i++){
+        //     var element = author[i];
+        //     console.log(element);
+        // }
+
+           
+        // const ul = document.getElementById("gift-item");
+        // const li = document.createElement("li");
+        // li.innerHTML = "Gift-5, appended!"
+        // ul.appendChild(li);
+    </script>
+
+    <ul id="parent-element">
+        <li class="item" id="first">item-1</li>
+        <li class="item">item-2</li>
+        <li class="item">item-3</li>
+        <li class="item">item-4</li>
+        <li class="item">item-5</li>
+    </ul>
+    <button id="addNewItem"> Add Item</button>
+    <script>
+        // document.getElementById("first").addEventListener('click', function(event){
+        //     console.log('First Item clicked!');
+        // });
+        // var items = document.getElementsByClassName("item");
+        // for(var i = 0; i < items.length; i++){
+        //     var item = items[i];
+        //     item.addEventListener('click', function(event){
+        //         //console.log(this, event.target);
+        //         //console.log(event.target.innerText);
+        //         event.target.parentNode.removeChild(event.target);
+        //     });
+        // }
+
+        document.getElementById('addNewItem').addEventListener('click', function(event){
+            var parentEle = document.getElementById('parent-element');
+            var newListItem = document.createElement('li');
+            newListItem.innerHTML = "Brand New item";
+            parentEle.appendChild(newListItem);
+        });
+        
+        document.getElementById('parent-element').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        });
+
+
+
+        // function handleClickColor(){
+        //     document.body.style.backgroundColor = "tomato";
+        // }
+        //var bodyColorChange =  document.getElementById("colorChange");
+        //bodyColorChange.addEventListener('click', handleClickColor);
+        //bodyColorChange.onclick = handleClickColor;
+        //document.getElementById("colorChange").addEventListener('click', handleClickColor);
+        //document.getElementById('colorChange').addEventListener('click', function(){
+
+        //});
+    </script>
+</body>
+</html>
